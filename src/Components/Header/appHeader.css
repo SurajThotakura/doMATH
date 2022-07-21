@@ -1,0 +1,11 @@
+.appHeader{
+    font-size: 2rem;
+    line-height: 2.5rem;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    z-index: 1;
+    width: 100%;
+    background-color: #fff;
+  }

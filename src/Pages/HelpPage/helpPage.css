@@ -1,0 +1,42 @@
+.staticContent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    gap: 2rem;
+}
+
+.textFlexWrapper{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.firstLine{
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+.secondLine{
+    font-size: 8rem;
+    line-height: 10rem;
+}
+
+.thirdLine{
+    font-size: 4rem;
+    line-height: 5rem;
+}
+
+a{
+    color: #aaa;
+    transition: 300ms;
+}
+
+a:hover{
+    color: #000;
+    cursor: pointer;
+}
