@@ -1,0 +1,49 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+.inputField{
+    font-size: 6rem;
+    line-height: 7.5rem;
+    color: transparent;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+}
+
+.inputFlexWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 7.5rem;
+}
+
+.userInput{
+    font-size: 6rem;
+    line-height: 7.5rem;
+    text-align: center;
+}
+
+.caret{
+    width: 4px;
+    height: 120px;
+    background-color: #808CFF;
+    border-radius: .5rem;
+    animation: blink 1500ms ease-out infinite;
+}
+
+@keyframes blink{
+    0%{opacity: 0;}
+    25%{opacity: .75;}
+    50%{opacity: 1;}
+    75%{opacity: .75;}
+    100%{opacity: 0;}
+}
