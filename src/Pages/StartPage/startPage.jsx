@@ -35,7 +35,7 @@ const StartPage = () => {
                     value={mediumDifficulty} 
                 />
                 <ChoiceCard 
-                    cardLabel={"Sure kick my but"} 
+                    cardLabel={"Sure kick my butt"} 
                     value={highDifficulty} 
                 />
         </ChoiceCardGroup>

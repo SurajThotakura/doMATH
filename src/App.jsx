@@ -9,6 +9,7 @@ import PizzaPage from './Pages/AboutPage/aboutPage'
 import useQuestionGen from './Hooks/mathQuestionHook'
 import { Route, Routes } from 'react-router-dom';
 import { useContext } from 'react';
+import AppFooter from './Components/Footer/appFooter'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
           <Route path='/about' element={<PizzaPage/>}/>
           <Route path='/results' element={<ResultsPage/>}/>
         </Routes>
+        <AppFooter/>
       </DifficultyContextProvider>
     </div>
   )
