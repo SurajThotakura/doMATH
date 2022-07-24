@@ -1,14 +1,19 @@
 import './startPage.css'
 import { useState, useContext } from 'react';
+
 import { DifficultyContext } from '../../Contexts/difficultyContext';
+import { GameStatsContext } from '../../Contexts/gameStatsContext';
+
+import { QuestionCircle24Regular, FoodPizza24Regular } from '@fluentui/react-icons';
+
 import ChoiceCard from '../../Components/ChoiceCard/Card/choiceCard';
 import ChoiceCardGroup from '../../Components/ChoiceCard/choiceCardGroup';
 import ButtonOL from '../../Components/Button/button';
-import { QuestionCircle24Regular, FoodPizza24Regular } from '@fluentui/react-icons';
 import { Link, useNavigate } from 'react-router-dom';
 
 const StartPage = () => {
     const { lowDifficulty, mediumDifficulty, highDifficulty, setDifficulty } = useContext(DifficultyContext)
+    const { setQuestionCount, setCorrectAnswerCount, setFastestSolve, setFinishTime} = useContext(GameStatsContext);
 
     const [radioSelection, setRadioSelection] = useState(lowDifficulty);
 
@@ -19,8 +24,12 @@ const StartPage = () => {
     }
     
     const buttonClicked = () => {
-        setDifficulty(radioSelection)
-        navigate('/game')
+        setDifficulty(radioSelection);
+        setCorrectAnswerCount(0);
+        setQuestionCount(0);
+        setFastestSolve(120);
+        setFinishTime(120);
+        navigate('/game');
     }
 
     return(
