@@ -1,5 +1,5 @@
 const useQuestionGen = (difficulty) => {
-    
+
     const randomNumberGen = (upperLimit) => {
         const number = Math.floor(upperLimit * Math.random());
         return number;
@@ -15,7 +15,7 @@ const useQuestionGen = (difficulty) => {
 
     const operation = randomArrayItem(operatorArray);
     const randomNumber1 = randomNumberGen(difficulty);
-    const randomNumber2 = randomNumberGen(difficulty-1)+1;
+    const randomNumber2 = (randomNumberGen(difficulty-1)+1);
 
     const answer = 
         operation === "/"

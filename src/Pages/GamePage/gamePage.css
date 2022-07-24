@@ -13,3 +13,11 @@
     font-size: 4rem;
     line-height: 5rem;
 }
+
+.liveStats {
+    color: #aaa;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
