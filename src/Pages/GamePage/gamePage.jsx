@@ -1,39 +1,47 @@
 import './gamePage.css'
-import { useState, useContext, useRef } from "react";
+import { useState, useContext, useRef, useEffect } from "react";
 import { DifficultyContext } from "../../Contexts/difficultyContext";
 import useQuestionGen from "../../Hooks/mathQuestionHook";
-import { DismissCircle48Regular, FoodPizza24Regular, Next48Regular, QuestionCircle24Regular } from '@fluentui/react-icons';
+import { DismissCircle48Regular, FoodApple24Filled, FoodPizza24Regular, Next48Regular, QuestionCircle24Regular } from '@fluentui/react-icons';
 import { Link } from 'react-router-dom';
 import TextInput from '../../Components/TextInput/textInput';
+import ButtonOL from '../../Components/Button/button';
 
 const GamePage = () => {
     const { difficulty } = useContext(DifficultyContext)
-    const { questionArray } = useQuestionGen(difficulty);
-    
-    const [questionCount, setQuestionCount] = useState(0)
 
-    const [answerContent, setAnswerContent] = useState('Type your answer')
-
-    const updateAnswerContent = () => {
-        const value = answerRef.current.value;
-        value?setAnswerContent(value):setAnswerContent('Type your answer')
-    }
-    
+    const [currentQuestion , setCurrentQuestion] = useState(null)
+    const [currentAnswer , setCurrentAnswer] = useState(null);
     const answerRef = useRef(0);
 
-    const questions = questionArray.map((x) => {
-        return(<div>{x.problemStatement}</div>)
-    })
+    const [questionCount,setQuestionCount] = useState(0);
+    const [correctAnswerCount, setCorrectAnswerCount] = useState(0);
 
-    const skipQuestion = () => {
-        setQuestionCount(questionCount+1)
+    const getNewQuestion = () => {
+        const { answer , problemStatement } = useQuestionGen(difficulty);
+        setCurrentAnswer(answer);
+        setCurrentQuestion(problemStatement);
+    }
+
+    useEffect(() => {
+        getNewQuestion();
+    }, [])
+
+    const nextQuestion = () => {
+        getNewQuestion();
+        setQuestionCount(questionCount+1);
         answerRef.current && answerRef.current.focus();
+    }
+
+    const validation = () => {
+        currentAnswer == answerRef.current.value ? setCorrectAnswerCount(correctAnswerCount+1): console.log('wrong');
+        nextQuestion();
     }
 
     return (
         <div className="gameContent">
             <div className='question'>
-                {questions[questionCount]}
+                {currentQuestion}
             </div>
 
             <TextInput placeHolder="Type your answer" inputRef={answerRef}/>
@@ -44,8 +52,10 @@ const GamePage = () => {
                 </Link>
 
                 <Link to='#'>
-                    <Next48Regular onClick={skipQuestion}/>
+                    <Next48Regular onClick={nextQuestion}/>
                 </Link>
+
+                <ButtonOL label="Submit" buttonClicked={validation}/>
 
                 <Link to='/results'>
                     <DismissCircle48Regular/>

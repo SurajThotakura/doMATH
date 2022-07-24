@@ -38,6 +38,7 @@ input[type=number] {
     background-color: #808CFF;
     border-radius: .5rem;
     animation: blink 1500ms ease-out infinite;
+    transition: 150ms;
 }
 
 @keyframes blink{

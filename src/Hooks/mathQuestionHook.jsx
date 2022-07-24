@@ -1,24 +1,25 @@
-const randomNumberGen = (upperLimit) => {
-    const number = Math.floor(upperLimit * Math.random());
-    return number;
-};
+const useQuestionGen = (difficulty) => {
+    
+    const randomNumberGen = (upperLimit) => {
+        const number = Math.floor(upperLimit * Math.random());
+        return number;
+    };
+    
+    const operatorArray = ["+", "-", "x", "/"];
+    
+    const randomArrayItem = (array) => {
+        const arrayLength = array.length;
+        const randomItem = Math.floor(arrayLength * Math.random());
+        return array[randomItem];
+    };
 
-const operatorArray = ["+", "-", "x", "/"];
-
-const randomArrayItem = (array) => {
-    const arrayLength = array.length;
-    const randomItem = Math.floor(arrayLength * Math.random());
-    return array[randomItem];
-};
-
-const randomQuestionGen = (difficulty) => {
     const operation = randomArrayItem(operatorArray);
     const randomNumber1 = randomNumberGen(difficulty);
-    const randomNumber2 = randomNumberGen(difficulty-11)+1;
+    const randomNumber2 = randomNumberGen(difficulty-1)+1;
 
     const answer = 
         operation === "/"
-        ? randomNumber1 % randomNumber2 === 0
+        ? randomNumber1 % randomNumber2 === 0   // To always generate a question who's answer is an integer.
             ? randomNumber1 > randomNumber2
                 ? randomNumber1 / randomNumber2
                 : randomNumber2 / randomNumber1
@@ -26,7 +27,7 @@ const randomQuestionGen = (difficulty) => {
                 ? (randomNumber1 - (randomNumber1 % randomNumber2)) / randomNumber2
                 : (randomNumber2 - (randomNumber2 % randomNumber1)) / randomNumber1
 
-        : operation === "*" 
+        : operation === "x" 
             ? randomNumber1  * randomNumber2
 
         : operation === "-"
@@ -49,11 +50,6 @@ const randomQuestionGen = (difficulty) => {
     return(
         {answer, problemStatement}
     )
-}
-
-const useQuestionGen = (difficulty) => {
-    const questionArray = [...new Array(120)].map(x=>randomQuestionGen(difficulty));
-    return { questionArray }
 }
 
 export default useQuestionGen

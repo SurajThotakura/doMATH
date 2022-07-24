@@ -10,6 +10,14 @@ const TextInput = (props) => {
         value?setUserInput(value):setUserInput(props.placeHolder);
     }
 
+    const resetField = () => {
+        const value = props.inputRef.current.value;
+        if(value){
+            props.inputRef.current.value='',
+            setUserInput('');
+        }
+    }
+
     const bringFocus = () => {
         props.inputRef.current && props.inputRef.current.focus();
     }
@@ -17,7 +25,7 @@ const TextInput = (props) => {
     return(
         <div className='wrapper'>
 
-            <input autoFocus type="number" className='inputField' ref={props.inputRef} onChange={updateUserInput}/>
+            <input autoFocus type="text" className='inputField' ref={props.inputRef} onChange={updateUserInput} onFocus={resetField}/>
             
             <div className='inputFlexWrapper' onClick={bringFocus}>
                 <div className='userInput'>{userInput}</div>
