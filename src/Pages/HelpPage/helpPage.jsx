@@ -5,7 +5,7 @@ import useKeyPress from '../../Hooks/keyPressHook';
 
 const HelpPage = () => {
     const navigate = useNavigate();
-    useKeyPress(['Enter'], navigate('/'));
+    useKeyPress(['Enter'], ()=>navigate('/'));
     return (
         <div className='staticContent'>
             <div className="textFlexWrapper">

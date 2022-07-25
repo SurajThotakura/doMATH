@@ -86,7 +86,7 @@ const GamePage = () => {
                 {currentQuestion}
             </div>
 
-            <TextInput placeHolder="Type your answer" inputRef={answerRef}/>
+            <TextInput placeHolder="" inputRef={answerRef}/>
 
             <div className='buttonCluster'>
                 <Link to='/help'>
