@@ -3,7 +3,48 @@
     line-height: 2.5rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 2rem 0;
     width: 100%;
     background-color: #fff;
+    gap: 1rem;
   }
+
+  .timeStyleWrapper{
+    display: flex;
+    align-items: baseline;
+  }
+
+.blueDot {
+  height: .875rem;
+  width: .875rem;
+  border-radius: 50%;
+  background: linear-gradient(124deg, #dd00f3, #dd00f3, #2b1de8, #1ddde8, #1de840, #e3e81d, #e8b71d, #e81d1d, #ff2400);
+  background-size: 1800% 1800%;
+
+  -webkit-animation: rainbow 10s ease infinite;
+  -z-animation: rainbow 10s ease infinite;
+  -o-animation: rainbow 10s ease infinite;
+  animation: rainbow 5s ease reverse infinite;
+}
+
+@-webkit-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%; border-radius: 20%;}
+    100%{background-position:0% 82%;transform: rotate(360deg);}
+}
+@-moz-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%; border-radius: 20%}
+    100%{background-position:0% 82%;transform: rotate(360deg);}
+}
+@-o-keyframes rainbow {
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%; border-radius: 20%;}
+    100%{background-position:0% 82%;transform: rotate(360deg);}
+}
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%; border-radius: 20%;}
+    100%{background-position:0% 82%;transform: rotate(360deg);}
+}

@@ -10,7 +10,7 @@
     gap: .5rem;
 }
 
-.enterKey{
+.keyDecor{
     display: flex;
     align-items: center;
     gap: 6px;

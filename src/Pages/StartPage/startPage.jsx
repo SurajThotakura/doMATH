@@ -6,6 +6,8 @@ import { GameStatsContext } from '../../Contexts/gameStatsContext';
 
 import { QuestionCircle24Regular, FoodPizza24Regular } from '@fluentui/react-icons';
 
+import useKeyPress from '../../Hooks/keyPressHook';
+
 import ChoiceCard from '../../Components/ChoiceCard/Card/choiceCard';
 import ChoiceCardGroup from '../../Components/ChoiceCard/choiceCardGroup';
 import ButtonOL from '../../Components/Button/button';
@@ -31,6 +33,8 @@ const StartPage = () => {
         setFinishTime(120);
         navigate('/game');
     }
+
+    useKeyPress(['Enter'], buttonClicked);
 
     return(
     <div className='startPageContent'>

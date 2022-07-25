@@ -9,6 +9,15 @@ const AppFooter = () => {
 
     const location = useLocation().pathname;
 
+    const keyDecor = (label, Icon) => {
+        return(
+            <div className='keyDecor'>
+                <Icon/>
+                <div>{label}</div>
+            </div>
+        )
+    }
+
     useEffect(() => {
         setActionContent(
             location==='/'? 'to start'
@@ -21,10 +30,7 @@ const AppFooter = () => {
     return (
         <div className='appFooter'>
             <div className="press"> Press </div>
-            <div className='enterKey'>
-                <ArrowEnterLeft20Filled/>
-                <div>Enter</div>
-            </div>
+                {keyDecor('Enter', ArrowEnterLeft20Filled)}
             <div className='actionContent'>
                 {actionContent}
             </div>
@@ -32,4 +38,4 @@ const AppFooter = () => {
     )
 }
 
-export default AppFooter
+export default AppFooter;

@@ -1,10 +1,11 @@
 import './appHeader.css'
 
 const AppHeader = () => {
-    const headerContent = "doMATH"
     return(
         <div className="appHeader">
-            <div>{headerContent}</div>
+            <div>doMath</div>
+            <div className='blueDot'></div>
+            <div>120s</div>
         </div>
     )
 }

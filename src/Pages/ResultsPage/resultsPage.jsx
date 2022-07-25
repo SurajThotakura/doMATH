@@ -1,9 +1,11 @@
-import './resultsPage.css'
-import ButtonOL from "../../Components/Button/button"
-import { QuestionCircle24Regular, FoodPizza24Regular } from "@fluentui/react-icons"
-import { Link, useNavigate } from "react-router-dom"
-import { useContext } from 'react'
-import { GameStatsContext } from '../../Contexts/gameStatsContext'
+import './resultsPage.css';
+import ButtonOL from "../../Components/Button/button";
+import { QuestionCircle24Regular, FoodPizza24Regular } from "@fluentui/react-icons";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext } from 'react';
+import { GameStatsContext } from '../../Contexts/gameStatsContext';
+import useKeyPress from '../../Hooks/keyPressHook';
+
 const ResultsPage = () => {
     const { questionCount, setQuestionCount, correctAnswerCount, setCorrectAnswerCount, fastestSolve, setFastestSolve, finishTime, setFinishTime} = useContext(GameStatsContext);
     const navigate = useNavigate();
@@ -12,8 +14,10 @@ const ResultsPage = () => {
         setQuestionCount(0);
         setFastestSolve(120);
         setFinishTime(120);
-        navigate('/')
+        navigate('/');
     }
+
+    useKeyPress(['Enter'], buttonClicked);
 
     return(
         <div className="resultsPageContent">
