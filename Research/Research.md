@@ -5,8 +5,6 @@
 ### Main reference:
 https://devtrium.com/posts/how-keyboard-shortcut
 
-https://www.youtube.com/watch?v=cCOL7MC4Pl0
-
 ### Other references:
 https://devtrium.com/posts/dependency-arrays
 
@@ -20,6 +18,8 @@ https://unicode.org/emoji/charts/full-emoji-list.html#1f923
 
 ## useTimerAnimationFrame Hook:
 https://css-tricks.com/using-requestanimationframe-with-react-hooks/
+
+https://www.youtube.com/watch?v=cCOL7MC4Pl0
 
 <br />
 
