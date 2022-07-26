@@ -11,8 +11,7 @@ input[type=number] {
 
 
 .inputField{
-    font-size: 6rem;
-    line-height: 7.5rem;
+    font-size: 1px;
     color: transparent;
     background-color: transparent;
     border: 0;
@@ -23,13 +22,12 @@ input[type=number] {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 7.5rem;
 }
 
 .userInput{
     font-size: 6rem;
     line-height: 7.5rem;
-    text-align: center;
+    text-align: center; 
 }
 
 .caret{

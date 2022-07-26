@@ -76,36 +76,40 @@ const GamePage = () => {
     useKeyPress(['x'], ()=>{leaveGame(); navigate('/results')});
 
     return (
-        timerCount<120?
+        timerCount<121?
         <div className="gameContent">
-            <div className="liveStats">
-                <div>{Math.round(timerCount)}</div>
-                <div>Total solved: {questionCount}</div>
+            <div className='questionWraper'>
+                <div className="liveStats">
+                    <div>{Math.round(timerCount)}</div>
+                    <div>Total solved: {questionCount}</div>
+                </div>
+                <div className='question'>
+                    {currentQuestion}
+                </div>
             </div>
-            <div className='question'>
-                {currentQuestion}
-            </div>
 
-            <TextInput placeHolder="" inputRef={answerRef}/>
+            <div className="answerWraper">
+                <TextInput placeHolder="" inputRef={answerRef}/>
 
-            <div className='buttonCluster'>
-                <Link to='/help'>
-                    <QuestionCircle24Regular/>
-                </Link>
+                <div className='buttonCluster'>
+                    <Link to='/help'>
+                        <QuestionCircle24Regular/>
+                    </Link>
 
-                <Link to='#'>
-                    <Next48Regular onClick={nextQuestion}/>
-                </Link>
+                    <Link to='#'>
+                        <Next48Regular onClick={nextQuestion}/>
+                    </Link>
 
-                <ButtonOL label="Submit" buttonClicked={validation}/>
+                    <ButtonOL label="Submit" buttonClicked={validation}/>
 
-                <Link to='/results'>
-                    <DismissCircle48Regular onClick={leaveGame}/>
-                </Link>
+                    <Link to='/results'>
+                        <DismissCircle48Regular onClick={leaveGame}/>
+                    </Link>
 
-                <Link to='/about'>
-                    <FoodPizza24Regular/>
-                </Link>
+                    <Link to='/about'>
+                        <FoodPizza24Regular/>
+                    </Link>
+                </div>
             </div>
         </div>
         : <Navigate replace to='/results'/>
