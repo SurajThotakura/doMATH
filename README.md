@@ -5,7 +5,7 @@
   <h1>doMath</h1>
   
   <h2>
-    A math game to chill, takes some heat or get your butt kicked. 
+    A math game to chill, take some heat or get your butt kicked. 
   </h2>
 
   <br />
