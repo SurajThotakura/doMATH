@@ -5,7 +5,7 @@
   <h1>doMath</h1>
   
   <h2>
-    A math game to chill, takes some hit or get your butt kicked. 
+    A math game to chill, takes some heat or get your butt kicked. 
   </h2>
 
   <br />
@@ -38,7 +38,7 @@
 <br />
 
 <h1 align="center">
-<a href="https://surajthotakura.com/">View Demo</a>
+<a href="https://surajthotakura.com/" target="_blank" rel="noreferrer noopener">View Demo</a>
 </h1>
 
 <h2 align="center">
