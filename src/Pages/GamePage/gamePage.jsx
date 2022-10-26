@@ -23,7 +23,7 @@ import ButtonOL from '../../Components/Button/button';
 
 const GamePage = () => {
     const { difficulty } = useContext(DifficultyContext);
-    const { questionCount, setQuestionCount, correctAnswerCount, setCorrectAnswerCount, fastestSolve, setFastestSolve, finishTime, setFinishTime} = useContext(GameStatsContext);
+    const { questionCount, setQuestionCount, correctAnswerCount, setCorrectAnswerCount, fastestSolve, setFastestSolve, setFinishTime} = useContext(GameStatsContext);
 
     const [currentQuestion , setCurrentQuestion] = useState(null)
     const [currentAnswer , setCurrentAnswer] = useState(null);
@@ -52,6 +52,7 @@ const GamePage = () => {
     const nextQuestion = () => {
         getNewQuestion();
         setQuestionCount(questionCount+1);
+        console.log(questionCount);
         answerRef.current && answerRef.current.focus();
     }
 
